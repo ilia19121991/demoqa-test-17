@@ -1,11 +1,13 @@
+package tests;
+
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -36,35 +38,34 @@ public class PracticeFormTests {
             $("#firstName").setValue(firstName);
             $("#lastName").setValue(lastName);
             $("#userEmail").setValue(email);
-            $(byXpath("//*[@id=\"genterWrapper\"]/div[2]/div[2]/label")).click();
+            $("#genterWrapper").$(new ByText("Female")).click();
             $("#userNumber").setValue(mobile);
 
             $("#dateOfBirthInput").click();
-            $("[class=react-datepicker__month-select]").selectOptionByValue("11");
-            $("[class=react-datepicker__year-select]").selectOptionByValue("1991");
-            $(byXpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[5]")).click();
+            $(".react-datepicker__month-select").selectOption("December");
+            $(".react-datepicker__year-select").selectOption("1991");
+            $(".react-datepicker__day--005:not(.react-datepicker__day--outside-month)").click();
+
 
             $("#subjectsInput").setValue(subject1).pressEnter().setValue(subject2).pressEnter();
 
-            $(byXpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[1]/label")).click();
-            $(byXpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[3]/label")).click();
+            $("#hobbiesWrapper").$(new ByText("Sports")).click();
+            $("#hobbiesWrapper").$(new ByText("Music")).click();
 
             $("#uploadPicture").uploadFile(new File("src/test/data/searchElements.jpg"));
 
             $("#currentAddress").setValue(currentAddress);
             $("#state").click();
-            $("#react-select-3-option-0").click();
+            $("#stateCity-wrapper").$(new ByText("NCR")).click();
             $("#city").click();
-            $("#react-select-4-option-1").click();
+            $("#stateCity-wrapper").$(new ByText("Gurgaon")).click();
 
             $("#submit").click();
 
-            $("[class=modal-header]").shouldHave(text(submitText));
-            $("[class=modal-body]").shouldHave(text(firstName), text(lastName), text(email), text("Female"), text(mobile),
-                    text("19 December,1991"), text(subject1), text(subject2), text("Sports, Music"), text("searchElements.jpg"), text(currentAddress), text("NCR Gurgaon"));
-
+            $(".modal-header").shouldHave(text(submitText));
+            $(".modal-body").shouldHave(text(firstName), text(lastName), text(email), text("Female"), text(mobile),
+                    text("05 December,1991"), text(subject1), text(subject2), text("Sports, Music"), text("searchElements.jpg"), text(currentAddress), text("NCR Gurgaon"));
+            $(".modal-body").shouldNotHave(text("Reading"));
 
         }
-
-
 }
