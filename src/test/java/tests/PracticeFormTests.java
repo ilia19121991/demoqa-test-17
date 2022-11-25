@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -32,6 +33,7 @@ public class PracticeFormTests {
             String submitText ="Thanks for submitting the form";
 
             open("/automation-practice-form");
+            $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
             executeJavaScript("$('footer').remove()");
             executeJavaScript("$('#fixedban').remove()");
 
@@ -62,7 +64,7 @@ public class PracticeFormTests {
 
             $("#submit").click();
 
-            $(".modal-header").shouldHave(text(submitText));
+
             $(".modal-body").shouldHave(text(firstName), text(lastName), text(email), text("Female"), text(mobile),
                     text("05 December,1991"), text(subject1), text(subject2), text("Sports, Music"), text("searchElements.jpg"), text(currentAddress), text("NCR Gurgaon"));
             $(".modal-body").shouldNotHave(text("Reading"));
