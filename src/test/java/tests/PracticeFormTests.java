@@ -9,6 +9,7 @@ import java.io.File;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -40,7 +41,7 @@ public class PracticeFormTests {
             $("#firstName").setValue(firstName);
             $("#lastName").setValue(lastName);
             $("#userEmail").setValue(email);
-            $("#genterWrapper").$(new ByText("Female")).click();
+            $("#genterWrapper").$(byText("Female")).click();
             $("#userNumber").setValue(mobile);
 
             $("#dateOfBirthInput").click();
@@ -51,16 +52,16 @@ public class PracticeFormTests {
 
             $("#subjectsInput").setValue(subject1).pressEnter().setValue(subject2).pressEnter();
 
-            $("#hobbiesWrapper").$(new ByText("Sports")).click();
-            $("#hobbiesWrapper").$(new ByText("Music")).click();
+            $("#hobbiesWrapper").$(byText("Sports")).click();
+            $("#hobbiesWrapper").$(byText("Music")).click();
 
             $("#uploadPicture").uploadFile(new File("src/test/data/searchElements.jpg"));
 
             $("#currentAddress").setValue(currentAddress);
             $("#state").click();
-            $("#stateCity-wrapper").$(new ByText("NCR")).click();
+            $("#stateCity-wrapper").$(byText("NCR")).click();
             $("#city").click();
-            $("#stateCity-wrapper").$(new ByText("Gurgaon")).click();
+            $("#stateCity-wrapper").$(byText("Gurgaon")).click();
 
             $("#submit").click();
 
