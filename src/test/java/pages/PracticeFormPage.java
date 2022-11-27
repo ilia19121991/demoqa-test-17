@@ -5,7 +5,10 @@ import com.codeborne.selenide.selector.ByText;
 import pages.components.CalendarComponent;
 import pages.components.RegistrationResultsModal;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormPage {
@@ -22,7 +25,14 @@ public class PracticeFormPage {
             addressInput = $("#currentAddress"),
             genderSelect = $("#genterWrapper"),
             hobbiesSelect = $("#hobbiesWrapper"),
-            dateOfBirthInput = $("#dateOfBirthInput");
+            dateOfBirthInput = $("#dateOfBirthInput"),
+            pictureInput = $("#uploadPicture"),
+            stateInput = $("#state"),
+            stateCitySelect = $("#stateCity-wrapper"),
+            cityInput = $("#city"),
+            submitButton = $("#submit");
+
+
 
     public PracticeFormPage openPage(){
         open("/automation-practice-form");
@@ -69,20 +79,14 @@ public class PracticeFormPage {
         return this;
     }
 
-    public PracticeFormPage setAddress(String value){
-        addressInput.setValue(value);
-
-        return this;
-    }
-
     public PracticeFormPage setGender(String value){
-        genderSelect.$(new ByText(value)).click();
+        genderSelect.$(byText(value)).click();
 
         return this;
     }
 
     public PracticeFormPage setHobbies(String value){
-        hobbiesSelect.$(new ByText(value)).click();
+        hobbiesSelect.$(byText(value)).click();
 
         return this;
     }
@@ -93,6 +97,39 @@ public class PracticeFormPage {
 
         return this;
     }
+
+    public PracticeFormPage addPicture (String value){
+        pictureInput.uploadFile(new File(value));
+
+        return this;
+    }
+
+    public PracticeFormPage setAddress(String value){
+        addressInput.setValue(value);
+
+        return this;
+    }
+
+    public PracticeFormPage clickSubmit(){
+        submitButton.click();
+
+        return this;
+    }
+
+    public PracticeFormPage setState(String value){
+        stateInput.click();
+        stateCitySelect.$(byText(value)).click();
+
+        return this;
+    }
+
+    public PracticeFormPage setCity(String value){
+        cityInput.click();
+        stateCitySelect.$(byText(value)).click();
+
+        return this;
+    }
+
 
     public PracticeFormPage verifyResultsModalAppears(){
         registrationResultsModal.verifyModalAppears();
