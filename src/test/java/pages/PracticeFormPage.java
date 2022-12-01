@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.selector.ByText;
 import pages.components.CalendarComponent;
 import pages.components.RegistrationResultsModal;
 

@@ -1,12 +1,6 @@
 package tests;
 
-import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.Test;
-import java.io.File;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
-
 
 public class PracticeFormWithPageObjectsTests extends TestBase {
 
@@ -26,7 +20,7 @@ public class PracticeFormWithPageObjectsTests extends TestBase {
         String subject2 = "Maths";
         String hobby1 = "Sports";
         String hobby2 = "Music";
-        String picturePath = "src/test/data/searchElements.jpg";
+        String picturePath = "src/test/resources/searchElements.jpg";
         String pictureName = "searchElements.jpg";
         String currentAddress = "Moscow";
         String state = "NCR";
