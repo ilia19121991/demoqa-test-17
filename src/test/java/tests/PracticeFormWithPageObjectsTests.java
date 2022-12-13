@@ -20,7 +20,7 @@ public class PracticeFormWithPageObjectsTests extends TestBase {
         String subject2 = "Maths";
         String hobby1 = "Sports";
         String hobby2 = "Music";
-        String picturePath = "src/test/resources/searchElements.jpg";
+        String picturePath = "searchElements.jpg";
         String pictureName = "searchElements.jpg";
         String currentAddress = "Moscow";
         String state = "NCR";

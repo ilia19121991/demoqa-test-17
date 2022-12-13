@@ -55,7 +55,7 @@ public class PracticeFormTests {
             $("#hobbiesWrapper").$(byText("Sports")).click();
             $("#hobbiesWrapper").$(byText("Music")).click();
 
-            $("#uploadPicture").uploadFile(new File("src/test/resources/searchElements.jpg"));
+            $("#uploadPicture").uploadFile(new File("searchElements.jpg"));
 
             $("#currentAddress").setValue(currentAddress);
             $("#state").click();
