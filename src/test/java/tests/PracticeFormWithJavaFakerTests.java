@@ -29,7 +29,7 @@ public class PracticeFormWithJavaFakerTests extends TestBase {
                 dateOfBirth = dayOfBirth + " " + monthOfBirth + "," + yearOfBirth,
                 subject = randomListItem(subjects),
                 hobby = randomListItem(hobbies),
-                picturePath = "src/test/resources/searchElements.jpg",
+                picturePath = "searchElements.jpg",
                 pictureName = "searchElements.jpg",
                 currentAddress = faker.address().fullAddress(),
                 state = "NCR",
