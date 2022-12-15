@@ -1,9 +1,6 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -12,7 +9,7 @@ import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static tests.TestData.*;
+
 import static utils.RandomUtils.*;
 
 public class PracticeFormWithRandomUtilsTests extends TestBase {

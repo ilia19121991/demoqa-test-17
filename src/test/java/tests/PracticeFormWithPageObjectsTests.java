@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import org.junit.jupiter.api.Test;
 
 public class PracticeFormWithPageObjectsTests extends TestBase {
@@ -7,6 +8,7 @@ public class PracticeFormWithPageObjectsTests extends TestBase {
 
     @Test
     void practiceFormTest(){
+
         String firstName = "Anna";
         String lastName = "Petrova";
         String email = "anna@gmail.com";
