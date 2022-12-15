@@ -2,9 +2,7 @@ package tests;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
-import utils.RandomUtils;
 
-import java.util.Calendar;
 import java.util.Locale;
 
 public class PracticeFormWithJavaFakerTests extends TestBase {
@@ -29,7 +27,7 @@ public class PracticeFormWithJavaFakerTests extends TestBase {
                 dateOfBirth = dayOfBirth + " " + monthOfBirth + "," + yearOfBirth,
                 subject = randomListItem(subjects),
                 hobby = randomListItem(hobbies),
-                picturePath = "src/test/resources/searchElements.jpg",
+                picturePath = "searchElements.jpg",
                 pictureName = "searchElements.jpg",
                 currentAddress = faker.address().fullAddress(),
                 state = "NCR",

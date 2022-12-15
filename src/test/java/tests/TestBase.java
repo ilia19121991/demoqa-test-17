@@ -26,7 +26,7 @@ public class TestBase {
 
     public static String randomListItem(String [] values){
 
-        int index = randomInt(0, values.length);
+        int index = randomInt(0, values.length-1);
         return values[index];
     }
 
