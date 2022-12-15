@@ -9,9 +9,9 @@ public class PracticeFormWithPageObjectsTests extends TestBase {
     @Test
     void practiceFormTest(){
 
-        String firstName = "Anna";
+        String firstName = "Daria";
         String lastName = "Petrova";
-        String email = "anna@gmail.com";
+        String email = "daria@gmail.com";
         String gender = "Female";
         String mobile = "9166789010";
         String dayOfBirth = "05";
