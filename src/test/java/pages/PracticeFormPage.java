@@ -25,7 +25,7 @@ public class PracticeFormPage {
             genderSelect = $("#genterWrapper"),
             hobbiesSelect = $("#hobbiesWrapper"),
             dateOfBirthInput = $("#dateOfBirthInput"),
-            pictureInput = $("#uploadPicture"),
+            pictureInput = $("input[type='file']"),
             stateInput = $("#state"),
             stateCitySelect = $("#stateCity-wrapper"),
             cityInput = $("#city"),
@@ -98,7 +98,7 @@ public class PracticeFormPage {
     }
 
     public PracticeFormPage addPicture (String value){
-        pictureInput.uploadFile(new File(value));
+        pictureInput.uploadFromClasspath(value);
 
         return this;
     }
@@ -141,5 +141,7 @@ public class PracticeFormPage {
 
         return this;
     }
+
+
 
 }

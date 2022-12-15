@@ -55,7 +55,7 @@ public class PracticeFormTests {
             $("#hobbiesWrapper").$(byText("Sports")).click();
             $("#hobbiesWrapper").$(byText("Music")).click();
 
-            $("#uploadPicture").uploadFile(new File("src/test/data/searchElements.jpg"));
+            $("#uploadPicture").uploadFile(new File("searchElements.jpg"));
 
             $("#currentAddress").setValue(currentAddress);
             $("#state").click();
@@ -65,6 +65,8 @@ public class PracticeFormTests {
 
             $("#submit").click();
 
+            $(".modal-dialog").should(appear);
+            $(".modal-header").shouldHave(text("Thanks for submitting the form"));
 
             $(".modal-body").shouldHave(text(firstName), text(lastName), text(email), text("Female"), text(mobile),
                     text("05 December,1991"), text(subject1), text(subject2), text("Sports, Music"), text("searchElements.jpg"), text(currentAddress), text("NCR Gurgaon"));

@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import org.junit.jupiter.api.Test;
 
 public class PracticeFormWithPageObjectsTests extends TestBase {
@@ -7,9 +8,10 @@ public class PracticeFormWithPageObjectsTests extends TestBase {
 
     @Test
     void practiceFormTest(){
-        String firstName = "Anna";
+
+        String firstName = "Daria";
         String lastName = "Petrova";
-        String email = "anna@gmail.com";
+        String email = "daria@gmail.com";
         String gender = "Female";
         String mobile = "9166789010";
         String dayOfBirth = "05";
@@ -20,7 +22,7 @@ public class PracticeFormWithPageObjectsTests extends TestBase {
         String subject2 = "Maths";
         String hobby1 = "Sports";
         String hobby2 = "Music";
-        String picturePath = "src/test/resources/searchElements.jpg";
+        String picturePath = "searchElements.jpg";
         String pictureName = "searchElements.jpg";
         String currentAddress = "Moscow";
         String state = "NCR";
